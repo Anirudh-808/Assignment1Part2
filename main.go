@@ -1,6 +1,10 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"fmt"
+
+	"github.com/gin-gonic/gin"
+)
 
 type ID struct {
 	Username string
@@ -24,5 +28,11 @@ func IDHandler1(c *gin.Context) {
 
 	// user1 := ID{"Anirudh", "ANI123"}
 	// user2 := ID{"Abhinav", "ABHI123"}
+
+	username := request.Username
+	password := request.Password
+
+	fmt.Println(username)
+	fmt.Println(password)
 
 }
