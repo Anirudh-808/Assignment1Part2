@@ -1,14 +1,12 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/gin-gonic/gin"
 )
 
 type ID struct {
-	Username rune
-	Password rune
+	Username string
+	Password string
 }
 
 func main() {
@@ -26,13 +24,9 @@ func IDHandler1(c *gin.Context) {
 		return
 	}
 
-	// user1 := ID{"Anirudh", "ANI123"}
+	user1 := ID{"Anirudh", "ANI123"}
 	// user2 := ID{"Abhinav", "ABHI123"}
 
-	username := request.Username
-	password := request.Password
-
-	fmt.Println(username)
-	fmt.Println(password)
+	c.JSON(200, gin.H{"ID": user1})
 
 }
