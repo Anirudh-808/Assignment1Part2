@@ -7,8 +7,8 @@ import (
 )
 
 type ID struct {
-	Username string
-	Password string
+	Username rune
+	Password rune
 }
 
 func main() {
@@ -18,7 +18,7 @@ func main() {
 }
 
 func IDHandler1(c *gin.Context) {
-	request := ID{"Anirudh", "ANI123"}
+	var request ID
 	err := c.BindJSON(&request)
 
 	if err != nil {
