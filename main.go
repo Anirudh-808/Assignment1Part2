@@ -18,7 +18,7 @@ func main() {
 }
 
 func IDHandler1(c *gin.Context) {
-	var request ID
+	request := ID{"Anirudh", "ANI123"}
 	err := c.BindJSON(&request)
 
 	if err != nil {
