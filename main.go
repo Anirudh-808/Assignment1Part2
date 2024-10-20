@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -27,6 +29,7 @@ func IDHandler1(c *gin.Context) {
 	user1 := ID{"Anirudh", "ANI123"}
 	// user2 := ID{"Abhinav", "ABHI123"}
 
+	fmt.Println(user1)
 	c.JSON(200, gin.H{"ID": user1})
 
 }
