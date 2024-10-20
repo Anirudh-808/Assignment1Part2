@@ -9,11 +9,11 @@ type ID struct {
 
 func main() {
 	r := gin.Default()
-	r.POST("/ping", IDHandler)
+	r.POST("/signup", IDHandler1)
 	r.Run()
 }
 
-func IDHandler(c *gin.Context) {
+func IDHandler1(c *gin.Context) {
 	var request ID
 	err := c.BindJSON(&request)
 
@@ -21,5 +21,8 @@ func IDHandler(c *gin.Context) {
 		c.JSON(400, gin.H{"error": "Invalid request format"})
 		return
 	}
+
+	// user1 := ID{"Anirudh", "ANI123"}
+	// user2 := ID{"Abhinav", "ABHI123"}
 
 }
